@@ -1,1 +1,267 @@
+Q1. Why do we call Python as a general purpose and high-level programming language?
+sol.Python is known as a general-purpose and high-level programming language because it can be used to create a wide variety of software applications and tools, from web applications to scientific computing to desktop applications
 
+Q2.where does an inheritance search look for an attribute?
+Sol. In Python, when an attribute is accessed on an instance of a class, the interpreter first looks for the attribute within the instance itself. If the attribute is not found within the instance, it searches for the attribute within the class of the instance. If the attribute is still not found within the class, the interpreter continues the search in the base classes of the class in the order specified by the Method Resolution Order (MRO) algorithm
+
+
+
+
+Q3. How do you distinguish between class object and an instance object?
+sol.In object-oriented programming, a class is a blueprint or template for creating objects, while an instance is a specific realization or occurrence of a class.To distinguish between a class object and an instance object, you can consider the following:
+1.Class Object: A class object is created when a class is defined. It is used to access class-level attributes and methods.
+2.Instance Object: An instance object is created when a class is instantiated. It is used to access instance-level attributes and methods.
+
+
+
+
+Q4.what makes the first argument in a class method function special?
+sol.In Python, the first argument of a class method function is conventionally named cls(short for "class") and it refers to the class itself, rather than an instance of the class.
+When a class method is called, the cls argument is automatically passed in by Python, and it allows you to access class-level attributes and methods within the function. This means that you can modify class-level variables or call class-level methods from within the class method function.
+
+
+Q5. what is the purpose of init method?
+sol.The init method is a special method in Python classes that is called when an instance of the class is created. It is used to initialize the attributes of the instance to their initial values.
+
+
+
+
+The primary purpose of the init method is to provide a way to set up an object's initial state. This method is called immediately after an instance of the class is created, and it typically initializes the object's attributes.
+
+
+Q6.what is the process for creating a class instance?
+Define a class: First, you need to define a class. A class is a blueprint for creating objects with a set of attributes and methods.
+Instantiate the class: Once you have defined the class, you can create an instance of the class. This is also known as object instantiation. To do this, you use the class name followed by parentheses. For example, if your class is called "Person", you would create an instance of the class like this: person = Person()
+Pass arguments: If your class has an init() method, which is used to initialize the object's attributes, you can pass arguments to it when you create the instance
+
+
+
+
+Q7.what is the process for creating a class?
+Sol. 1. Class is a set of object which shares common characteristics/ behavior and common properties/ attributes.
+2. Class is not a real world entity. It is just a template or blueprint or prototype from which objects are created.
+3. Class does not occupy memory.
+4. Class is a group of variables of different data types and group of methods.
+
+
+A class in java can contain:
+• data member
+• method
+• constructor
+• nested class and 
+• interface
+Q8.How do you define the superclass of a class?
+A superclass is the class from which many subclasses can be created. The subclasses inherit the characteristics of a superclass. The superclass is also known as the parent class or base class
+
+
+Q9.what is the relationship between class and modules?
+Classes in python are templates for creating objects. They contain variables and functions which define the class objects. At the same time, modules are python programs that can be imported into another python program. Importing a module enables the usage of the module’s functions and variables into another program.
+
+
+Q10.How do you make instances and classes?
+sol.In programming, classes and instances are two fundamental concepts used to create objects with certain properties and behaviors. Here is a brief explanation of how to create instances and classes in Python:
+Creating Classes: A class is a blueprint for creating objects. To create a class, you use the "class" keyword followed by the name of the class. 
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+def say_hello(self):
+        print("Hello, my name is", self.name)
+
+
+Creating Instances: Once you have defined a class, you can create instances of that class. To create an instance, you call the class constructor using the class name followed by parentheses.
+ obj1 = MyClass("John")
+obj2 = MyClass("Mary")
+
+
+Q11.where and how should be class attributes created?
+Class attributes belong to the class itself they will be shared by all the instances. Such attributes are defined in the class body parts usually at the top, for legibility.
+class sampleclass:
+    count = 0     # class attribute
+  
+    def increase(self):
+        sampleclass.count += 1
+s1 = sampleclass()
+s1.increase()        
+print(s1.count)
+s2 = sampleclass()
+s2.increase()
+print(s2.count)
+print(sampleclass.count)
+
+
+
+
+Q13.what does the term self in a python class mean?
+Sol. self represents the instance of the class. By using the “self”  we can access the attributes and methods of the class in python. It binds the attributes with the given arguments.
+class check:
+    def __init__(self):
+        print("Address of self = ",id(self))
+obj = check()
+print("Address of class object = ",id(obj))
+Q14.How does a python class handle operator overloading?
+Sol.Operator overloading means giving extended meaning beyond their predefined operational meaning. For example operator + is used to add two integers as well as join two strings and merge two lists. It is achievable because ‘+’ operator is overloaded by int class and str class. You might have noticed that the same built-in operator or function shows different behavior for objects of different classes, this is called Operator
+print(1 + 2)
+ 
+# concatenate two strings
+print("Geeks"+"For")
+
+
+
+
+
+
+Q15.when do you consider allowing operator overloading of your classes?
+Sol.Operator overloading means giving extended meaning beyond their predefined operational meaning. For example operator + is used to add two integers as well as join two strings and merge two lists. It is achievable because ‘+’ operator is overloaded by int class and str class. You might have noticed that the same built-in operator or function shows different behavior for objects of different classes, this is called Operator Overloading. 
+
+
+
+
+Q16. What is the most popular form of operator overloading?
+
+
+The most frequent instance is the adding up operator ‘+’, where it can be used for the usual addition and also for combining two different strings. As mentioned on top, the plus symbol’s practice in dissimilar forms is the largest classic example of the operator level overloading process.
+
+
+
+
+Q17.what are the two most important concepts to grasp in order to comprehend python oop code?
+Sol.  Both inheritance and polymorphism are fundamental concepts of object oriented programming. These concepts help us to create code that can be extended and easily maintainable.
+Inheritance is a great way to eliminate unnecessary repetitive code. A child class can inherit from the parent class partially or entirely. Python is quite flexible with regards to inheritance.Polymorphism contributes to Python’s flexibility as well. 
+Q18. Describe three applications for exceptional processing?
+
+
+Sol. 1)Library
+A library is a set of functions / classes focusing on some problem domain.
+
+
+2)API
+APIs can be thought of as a library of functions exposed over a network e.g., continuing earlier example, if there is a decision to expose Data Access APIs as REST APIs, it would look like the following.
+
+
+3)UI Application
+Almost all UI applications are written using some framework with the framework calling the application when there is some event. This makes the event handlers an entry point in to the application so exceptions should be caught on event handlers.
+
+
+
+
+
+
+
+
+
+
+
+
+Q21. Describe two methods for triggering exceptions in your script?
+
+
+Sol. To avoid such a scenario, there are two methods to handle Python exceptions: Try – This method catches the exceptions raised by the program. Raise – Triggers an exception manually using custom exceptions.
+
+
+
+
+
+
+
+
+
+
+Q22.what is the purpose of try statement?
+
+
+Sol. The try statement allows you to define a block of code to be tested for errors while it is being executed. The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+
+
+
+
+
+
+
+Q23.what are the two most popular try statement variations?
+
+
+Sol. The Different Try/Except Variations. So far we've used a try / except and even a try / except / except , but this is only two-thirds of the story. There are two other optional segments to a try block: else and finally . Both of these optional blocks will come after the try and the except .
+Q25.what is the purpose of raise statement?
+
+
+Sol. The RAISE statement stops normal execution of a PL/SQL block or subprogram and transfers control to an exception handler. RAISE statements can raise predefined exceptions, such as ZERO_DIVIDE or NO_DATA_FOUND , or user-defined exceptions whose names you decide.
+
+
+
+
+
+
+
+
+Q26.what does the assert statement do?
+
+
+Sol. assert statement takes an expression and optional message. assert statement is used to check types, values of argument and the output of the function. assert statement is used as debugging tool as it halts the program at the point where an error occurs.
+
+
+
+
+
+
+
+
+Q27. what is the purpose of with /as argument?
+
+
+Sol.  In Python, the with statement replaces a try-catch block with a concise shorthand. More importantly, it ensures closing resources right after processing them. A common example of using the with statement is reading or writing to a file. A function or class that supports the with statement is known as a context manager.
+
+
+
+
+
+
+
+
+Q28. what are *args, **kwargs?
+
+
+Sol. *args passes variable number of non-keyworded arguments and on which operation of the tuple can be performed. **kwargs passes variable number of keyword arguments dictionary to function on which operation of a dictionary can be performed. *args and **kwargs make the function flexible.
+
+
+
+
+
+
+Q29. what are lamda functions?
+
+
+Sol. lambda is a keyword in Python for defining the anonymous function. argument(s) is a placeholder, that is a variable that will be used to hold the value you want to pass into the function expression. A lambda function can have multiple variables depending on what you want to achieve.
+
+
+
+
+
+
+Q30.Explain inheritance in python with an example?
+
+
+Sol. Inheritance relationship defines the classes that inherit from other classes as derived, subclass, or sub-type classes. Base class remains to be the source from which a subclass inherits. For example, you have a Base class of “Animal,” and a “Lion” is a Derived class. The inheritance will be Lion is an Animal.
+
+
+
+
+class Country:
+     def ShowCountry(self):
+         print(“This is Spain”);
+class State(Country):
+     def ShowState(self):
+         print(“This is State”);
+st =State();
+st.ShowCountry();
+st.ShowState();
+
+
+Q33. Explain the use of non-local keyword in python?
+Sol. The nonlocal keyword is used to work with variables inside nested functions, where the variable should not belong to the inner function. Use the keyword nonlocal to declare that the variable is not local.
+
+
+
+
+Q34. what is the global keyword?
+Sol. Global keyword is used when we want to read or write any global variable value inside the function. The global keyword used for a variable declared outside the function does not have any effect on it. In the same line, a variable cannot be declared global and assigned a value. E.g. global x = 5 is not allowed.
