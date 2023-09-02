@@ -1,0 +1,59 @@
+Reverse a String:
+
+To reverse a string in Python, you can use slicing:
+python
+Copy code
+reversed_string = input_string[::-1]
+Find the Missing Number in an Array:
+
+You can find the missing number in an array of consecutive integers using the sum formula:
+python
+Copy code
+expected_sum = n * (n + 1) // 2
+actual_sum = sum(arr)
+missing_number = expected_sum - actual_sum
+Determine if a String Has All Unique Characters:
+
+To check if a string has all unique characters in Python:
+python
+Copy code
+def has_unique_chars(s):
+    return len(set(s)) == len(s)
+Check for Palindrome:
+
+To check if a string is a palindrome in Python:
+python
+Copy code
+def is_palindrome(s):
+    return s == s[::-1]
+Find Two Numbers in an Array That Add Up to a Target Sum:
+
+You can use a dictionary (hash table) to solve this problem efficiently:
+python
+Copy code
+def two_sum(nums, target):
+    num_to_index = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_to_index:
+            return [num_to_index[complement], i]
+        num_to_index[num] = i
+Reverse a Linked List:
+
+To reverse a singly linked list in Python:
+python
+Copy code
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def reverse_linked_list(head):
+    prev = None
+    current = head
+    while current:
+        next_node = current.next
+        current.next = prev
+        prev = current
+        current = next_node
+    return prev
