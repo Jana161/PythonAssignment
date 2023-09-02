@@ -1,0 +1,111 @@
+Find the Common Elements in Two Arrays:
+
+To find common elements between two arrays in Python:
+python
+Copy code
+def find_common_elements(arr1, arr2):
+    set1 = set(arr1)
+    set2 = set(arr2)
+    common_elements = list(set1.intersection(set2))
+    return common_elements
+Calculate the Fibonacci Sequence:
+
+You can calculate the Fibonacci sequence in Python using recursion or iteration. Here's an iterative solution:
+python
+Copy code
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append(fib[i - 1] + fib[i - 2])
+    return fib[:n + 1]
+Check for Anagrams:
+
+To check if two strings are anagrams in Python:
+python
+Copy code
+def are_anagrams(str1, str2):
+    return sorted(str1) == sorted(str2)
+Remove Duplicates from a Sorted Array:
+
+To remove duplicates from a sorted array in Python:
+python
+Copy code
+def remove_duplicates(nums):
+    if not nums:
+        return 0
+    i = 0
+    for j in range(1, len(nums)):
+        if nums[j] != nums[i]:
+            i += 1
+            nums[i] = nums[j]
+    return i + 1
+Find the Maximum Subarray Sum:
+
+To find the maximum subarray sum (Kadane's algorithm) in Python:
+python
+Copy code
+def max_subarray_sum(nums):
+    max_sum = float('-inf')
+    current_sum = 0
+    for num in nums:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum
+Check if a Number is a Palindrome:
+
+To check if a number is a palindrome in Python:
+python
+Copy code
+def is_palindrome(num):
+    return str(num) == str(num)[::-1]
+Find the First Non-Repeating Character in a String:
+
+To find the first non-repeating character in a string in Python:
+python
+Copy code
+def first_non_repeating_char(s):
+    char_count = {}
+    for char in s:
+        char_count[char] = char_count.get(char, 0) + 1
+    for char in s:
+        if char_count[char] == 1:
+            return char
+    return None
+Merge Sorted Arrays:
+
+To merge two sorted arrays in Python:
+python
+Copy code
+def merge_sorted_arrays(arr1, arr2):
+    merged = []
+    i = j = 0
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]:
+            merged.append(arr1[i])
+            i += 1
+        else:
+            merged.append(arr2[j])
+            j += 1
+    merged.extend(arr1[i:])
+    merged.extend(arr2[j:])
+    return merged
+Find the Middle of a Linked List:
+
+To find the middle of a singly linked list in Python:
+python
+Copy code
+def find_middle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+    return slow
+Rotate an Array:
+
+To rotate an array in Python:
+python
+Copy code
+def rotate_array(nums, k):
+    n = len(nums)
+    k %= n
+    nums[:] = nums[-k:] + nums[:-k]
