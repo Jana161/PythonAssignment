@@ -1,0 +1,153 @@
+Find the Missing Positive Integer in an Array:
+To find the smallest missing positive integer in an array in Python:
+python
+Copy code
+def first_missing_positive(nums):
+    nums_set = set(nums)
+    i = 1
+    while i in nums_set:
+        i += 1
+    return i
+Reverse a Linked List in Groups of K:
+To reverse a linked list in groups of K nodes in Python:
+python
+Copy code
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def reverse_k_group(head, k):
+    def reverse_group(head, k):
+        prev = None
+        current = head
+        count = 0
+        while current and count < k:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+            count += 1
+        return prev, current
+
+    dummy = ListNode(0)
+    dummy.next = head
+    prev_group_end = dummy
+    while True:
+        group_start = prev_group_end.next
+        group_end = group_start
+        for _ in range(k):
+            if not group_end:
+                return dummy.next
+            group_end = group_end.next
+        next_group_start = group_end.next
+        group_end.next = None
+        reversed_group_start, reversed_group_end = reverse_group(group_start, k)
+        prev_group_end.next = reversed_group_start
+        group_end.next = next_group_start
+        prev_group_end = group_end
+Generate Parentheses:
+
+To generate all valid combinations of n pairs of parentheses in Python:
+python
+Copy code
+def generate_parentheses(n):
+    def backtrack(s, left, right):
+        if len(s) == 2 * n:
+            combinations.append(s)
+            return
+        if left < n:
+            backtrack(s + '(', left + 1, right)
+        if right < left:
+            backtrack(s + ')', left, right + 1)
+
+    combinations = []
+    backtrack('', 0, 0)
+    return combinations
+Merge Intervals:
+
+To merge overlapping intervals in a list in Python:
+python
+Copy code
+def merge_intervals(intervals):
+    if not intervals:
+        return []
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+    for interval in intervals[1:]:
+        if interval[0] <= merged[-1][1]:
+            merged[-1][1] = max(merged[-1][1], interval[1])
+        else:
+            merged.append(interval)
+    return merged
+Find the Peak Element in an Array:
+
+To find a peak element in an array in Python:
+python
+Copy code
+def find_peak_element(nums):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
+    return left
+Calculate the Power of a Number (x^n):
+
+To calculate the power of a number (x^n) in Python:
+python
+Copy code
+def power(x, n):
+    if n == 0:
+        return 1
+    if n < 0:
+        x = 1 / x
+        n = -n
+    result = 1
+    while n:
+        if n % 2 == 1:
+            result *= x
+        x *= x
+        n //= 2
+    return result
+Find the Longest Increasing Subsequence:
+
+To find the longest increasing subsequence in Python:
+python
+Copy code
+def length_of_lis(nums):
+    if not nums:
+        return 0
+    dp = [1] * len(nums)
+    for i in range(1, len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i], dp[j] + 1)
+    return max(dp)
+Find the Intersection of Two Arrays:
+
+To find the intersection of two arrays in Python:
+python
+Copy code
+def intersection(nums1, nums2):
+    return list(set(nums1) & set(nums2))
+Counting Sort:
+
+Counting Sort is a non-comparison sorting algorithm that counts the occurrences of each element and then reconstructs the sorted array. The following Python implementation assumes non-negative integer values:
+python
+Copy code
+def counting_sort(arr):
+    max_val = max(arr)
+    min_val = min(arr)
+    count = [0] * (max_val - min_val + 1)
+    output = [0] * len(arr)
+    for num in arr:
+        count[num - min_val] += 1
+    for i in range(1, len(count)):
+        count[i] += count[i - 1]
+    for num in arr:
+        output[count[num - min_val] - 1] = num
+        count[num - min_val] -= 1
+    return output
